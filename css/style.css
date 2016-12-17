@@ -1,3 +1,30 @@
+/*
+Theme Name: Surfing-Chef
+Theme URI:
+Author: Surfing Chef
+Author URI:
+Description:
+Features include: a video header on front page
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: surfing-chef
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Surfing-Chef is based on Bootstrap http://getbootstrap.com
+*/
+
+
+/* NAVIGATION
+============================================================*/
 .navbar-default {
-  border: none;
+  background-color: rgba(248,248,248, 0.9);
+  border-bottom: 1px solid rgb(225,225,225);
 }
+
+
+/* CONTENT
+============================================================*/
