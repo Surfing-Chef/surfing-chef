@@ -27,6 +27,13 @@ Surfing-Chef is based on Bootstrap http://getbootstrap.com
 
 /* HEADER
 ============================================================*/
+.shoutout {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  z-index: 1;
+}
+
 blockquote>footer {
   text-align: right;
 }
@@ -86,6 +93,10 @@ body>footer a {
 @media only screen and (max-width : 768px) {
   .navbar-collapse {
     text-align: center;
+  }
+
+  .shoutout {
+    display: none;
   }
 }
 /* Extra Small Devices, Phones */
