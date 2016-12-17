@@ -28,3 +28,20 @@ Surfing-Chef is based on Bootstrap http://getbootstrap.com
 
 /* CONTENT
 ============================================================*/
+
+/* FOOTER
+============================================================*/
+footer {
+  min-height: 90px;
+  background-color: rgba(119,119,119,1);
+}
+
+ footer .container {
+  padding-top: 25px;
+  text-align: center;
+}
+
+footer,
+footer a {
+  color: rgba(255,255,255,0.6);
+}
