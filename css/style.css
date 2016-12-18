@@ -42,6 +42,12 @@ blockquote>footer {
   text-align: center;
 }
 
+.shoutout.container > div > section > div,
+.shoutout.container > div > section > div > div{
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
 /* CONTENT
 ============================================================*/
 
@@ -88,13 +94,15 @@ body>footer a {
 }
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+  .quote blockquote {
+  font-size: 14px;
+  }
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
   .navbar-collapse {
     text-align: center;
   }
-
   .shoutout {
     display: none;
   }
