@@ -290,7 +290,7 @@ function display_html($posts_array){
 //display_html($posts_array);
 
 // Display array data - Debugging only
-print "<pre>";
-print_r($posts_array);
-print "</pre>";
+// print "<pre>";
+// print_r($posts_array);
+// print "</pre>";
 ?>
