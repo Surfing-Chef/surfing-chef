@@ -103,7 +103,7 @@
       </div>
       <div>
         <h1>Latest Feeds</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab libero, cupiditate veniam officiis itaque in porro iure fugit iusto reprehenderit commodi earum cum blanditiis quos error similique quod, facere! Hic.</p>
+        <p>This Section should display feeds.php generated html.</p>
       </div>
       <div>
         <h1>Recent Blogs</h1>
