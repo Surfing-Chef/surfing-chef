@@ -104,6 +104,7 @@
       <div>
         <h1>Latest Feeds</h1>
         <p>This Section should display feeds.php generated html.</p>
+        <?php include("functions/feeds.php"); ?>
       </div>
       <div>
         <h1>Recent Blogs</h1>
