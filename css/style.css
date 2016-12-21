@@ -51,6 +51,7 @@ blockquote>footer {
 /* CONTENT
 ============================================================*/
 
+
 /* FOOTER
 ============================================================*/
 body>footer {
@@ -96,6 +97,9 @@ body>footer a {
 @media only screen and (max-width : 992px) {
   .quote blockquote {
   font-size: 14px;
+  }
+  .feeds div div img {
+    max-width: 50%;
   }
 }
 /* Small Devices, Tablets */

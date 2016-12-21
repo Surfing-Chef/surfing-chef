@@ -277,15 +277,16 @@ function display_html($posts_array){
         $title = $value2['heading'];
         $href =  $value2['url'];
         ?>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
           <img src="<?php echo $img_url; ?>"
-                class="img-responsive"
+                class="img-thumbnail img-responsive center-block"
                 alt="<?php echo $title; ?>">
-          <div class="clearfix">
+          <div>
             <a href="<?php echo $href; ?>">
               <p><?php echo $title; ?></p>
             </a>
           </div>
+          <div class='clearfix'></div>
         </div>
     <?php
     }
