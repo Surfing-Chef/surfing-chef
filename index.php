@@ -97,16 +97,16 @@
 
     <!-- Front Page CONTENT -->
     <div class="main-content container">
-      <div>
+      <div class="row">
         <h1>Latest Blog</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab libero, cupiditate veniam officiis itaque in porro iure fugit iusto reprehenderit commodi earum cum blanditiis quos error similique quod, facere! Hic.</p>
       </div>
-      <div>
+      <div class="row">
         <h1>Latest Feeds</h1>
         <p>This Section should display feeds.php generated html.</p>
         <?php include("functions/feeds.php"); ?>
       </div>
-      <div>
+      <div class="row">
         <h1>Recent Blogs</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab libero, cupiditate veniam officiis itaque in porro iure fugit iusto reprehenderit commodi earum cum blanditiis quos error similique quod, facere! Hic.</p>
       </div>

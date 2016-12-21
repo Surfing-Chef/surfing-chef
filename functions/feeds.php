@@ -270,48 +270,22 @@ latest_posts ($https);
 // CREATE function
 function display_html($posts_array){
   foreach ($posts_array as $key => $value) {
-    $iter = 0;
-    echo "<h1>$key</h1>"; ?>
-    <div class="carousel slide" id="carousel-<?php echo $key; ?>">
-      <?php $slides =  count($value); ?>
-      <ol class="carousel-indicators">
-        <?php for ($i=0; $i<$slides; $i++){ ?>
-          <li data-target="#carousel-<?php echo $key; ?>" data-slide-to="<?php echo $i,'"'; if($i===0){echo 'class="active"'; }?>"></li>
-        <?php } ?>
-      </ol>
-
-      <div class="carousel-inner">
-        <?php
-        foreach ($value as $key2 => $value2) {
-          $img_url = $value2['image'];
-          $title = $value2['heading'];
-          $href =  $value2['url'];
-          ?>
-          <div class="<?php if ($iter === 0){
-                            echo 'item active'; } else {
-                            echo 'item';
-                            } ?>">
-            <img src="<?php echo $img_url; ?>" alt="<?php echo $title; ?>">
-            <div class="carousel-caption">
-              <a href="<?php echo $href; ?>">
-                <h2><?php echo $title; ?></h2>
-              </a>
-            </div>
+    echo "<h1>$key</h1>";
+      foreach ($value as $key2 => $value2) {
+        $img_url = $value2['image'];
+        $title = $value2['heading'];
+        $href =  $value2['url'];
+        ?>
+        <div class="">
+          <img src="<?php echo $img_url; ?>" alt="<?php echo $title; ?>">
+          <div class="">
+            <a href="<?php echo $href; ?>">
+              <h4><?php echo $title; ?></h4>
+            </a>
           </div>
-          <?php $iter += 1;
-        }?>
-      </div><!-- carousel-inner -->
-
-      <a class="left carousel-control" href="#carousel-<?php echo $key; ?>" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-
-      <a class="right carousel-control" href="#carousel-<?php echo $key; ?>" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-
-    </div><!-- carousel-inner -->
+        </div>
     <?php
+    }
   }
 }
 
