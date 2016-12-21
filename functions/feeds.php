@@ -18,25 +18,25 @@ include("curl.php");
 // includes a name, number of posts to retrieve, a long url and a short to append links to
 $https = array(
   array(
-    'name' => 'Food52',
+    'name' => 'Food52', //carousel-Food52
     'toget' => '4',
     'long' => 'https://food52.com',
     'short' => 'https://food52.com',
   ),
   array(
-    'name' => 'Epicurious',
+    'name' => 'Epicurious', //carousel-Epicurious
     'toget' => '4',
     'long' => 'https://www.epicurious.com/recipes-menus',
     'short' => 'https://www.epicurious.com',
   ),
   array(
-    'name' => 'Lucky Peach',
+    'name' => 'Lucky-Peach', //carousel-Lucky-Peach
     'toget' => '4',
     'long' => 'http://luckypeach.com/features/',
     'short' => 'http://www.luckypeach.com',
   ),
   array(
-    'name' => 'Saveur',
+    'name' => 'Saveur', //carousel-Saveur
     'toget' => '4',
     'long' => 'http://www.saveur.com',
     'short' => 'http://www.saveur.com',
@@ -157,7 +157,7 @@ function latest_posts ($https){
     $counter++;
   }
   //  LUCKY PEACH
-  if ($https[$counter]['name'] == 'Lucky Peach') {
+  if ($https[$counter]['name'] == 'Lucky-Peach') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
     $site = $https[$counter]['name'];
     $toget = $https[$counter]['toget'];
@@ -266,28 +266,58 @@ function latest_posts ($https){
 // CALL function
 latest_posts ($https);
 
-// Function to display array data using html
+// Function to display html data in bootstrap carousel
 // CREATE function
 function display_html($posts_array){
   foreach ($posts_array as $key => $value) {
-    echo "<h1>$key</h1>";
-    foreach ($value as $key2 => $value2) {
-      $img_url = $value2['image'];
-      $title = $value2['heading'];
-      $href =  $value2['url'];
-      ?>
-      <a href="<?php echo $href; ?>">
-        <img src="<?php echo $img_url; ?>" alt="<?php echo $title; ?>">
+    $iter = 0;
+    echo "<h1>$key</h1>"; ?>
+    <div class="carousel slide" id="carousel-<?php echo $key; ?>">
+      <?php $slides =  count($value); ?>
+      <ol class="carousel-indicators">
+        <?php for ($i=0; $i<$slides; $i++){ ?>
+          <li data-target="#carousel-<?php echo $key; ?>" data-slide-to="<?php echo $i,'"'; if($i===0){echo 'class="active"'; }?>"></li>
+        <?php } ?>
+      </ol>
+
+      <div class="carousel-inner">
+        <?php
+        foreach ($value as $key2 => $value2) {
+          $img_url = $value2['image'];
+          $title = $value2['heading'];
+          $href =  $value2['url'];
+          ?>
+          <div class="<?php if ($iter === 0){
+                            echo 'item active'; } else {
+                            echo 'item';
+                            } ?>">
+            <img src="<?php echo $img_url; ?>" alt="<?php echo $title; ?>">
+            <div class="carousel-caption">
+              <a href="<?php echo $href; ?>">
+                <h2><?php echo $title; ?></h2>
+              </a>
+            </div>
+          </div>
+          <?php $iter += 1;
+        }?>
+      </div><!-- carousel-inner -->
+
+      <a class="left carousel-control" href="#carousel-<?php echo $key; ?>" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
-      <h2><?php echo $title; ?></h2>
-      <?php
-    }
+
+      <a class="right carousel-control" href="#carousel-<?php echo $key; ?>" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+
+    </div><!-- carousel-inner -->
+    <?php
   }
 }
 
 // Display formed html
 // CALL function
-//display_html($posts_array);
+display_html($posts_array);
 
 // Display array data - Debugging only
 // print "<pre>";
