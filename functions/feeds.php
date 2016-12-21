@@ -270,24 +270,27 @@ latest_posts ($https);
 // CREATE function
 function display_html($posts_array){
   foreach ($posts_array as $key => $value) {
-    echo "<h1>$key</h1>";
+    echo "<div>";
+    echo "<h2>$key</h2>";
       foreach ($value as $key2 => $value2) {
         $img_url = $value2['image'];
         $title = $value2['heading'];
         $href =  $value2['url'];
         ?>
-        <div class="">
+        <div class="col-md-3">
           <img src="<?php echo $img_url; ?>"
-                class="img-responsive" 
+                class="img-responsive"
                 alt="<?php echo $title; ?>">
-          <div class="">
+          <div class="clearfix">
             <a href="<?php echo $href; ?>">
-              <h4><?php echo $title; ?></h4>
+              <p><?php echo $title; ?></p>
             </a>
           </div>
         </div>
     <?php
     }
+    echo "<div class='clearfix'></div>";
+    echo "</div>";
   }
 }
 
@@ -296,7 +299,7 @@ function display_html($posts_array){
 display_html($posts_array);
 
 // Display array data - Debugging only
-print "<pre>";
-print_r($posts_array);
-print "</pre>";
+// print "<pre>";
+// print_r($posts_array);
+// print "</pre>";
 ?>
