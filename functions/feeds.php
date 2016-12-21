@@ -277,7 +277,9 @@ function display_html($posts_array){
         $href =  $value2['url'];
         ?>
         <div class="">
-          <img src="<?php echo $img_url; ?>" alt="<?php echo $title; ?>">
+          <img src="<?php echo $img_url; ?>"
+                class="img-responsive" 
+                alt="<?php echo $title; ?>">
           <div class="">
             <a href="<?php echo $href; ?>">
               <h4><?php echo $title; ?></h4>
