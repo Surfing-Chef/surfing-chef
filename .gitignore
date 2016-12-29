@@ -67,3 +67,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Depots
+# =========================
+Epicurious.html
+Food52.html
+Lucky-Peach.html
+Saveur.html
